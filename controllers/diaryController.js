@@ -67,10 +67,15 @@ export const createEntry = async (req, res) => {
     try {
         const { title, content, reflection, tags, location } = req.body;
 
+        // validates required fields
+        if (!title || !content || !location) {
+            return res.status(400).json({ message: "title, content, and location are required." });
+        }
+
         // Fetch weather data if location is provided
         const weatherData = location ? await fetchWeather(location) : null;
         const newEntry = new DiaryEntry({
-            user: req.user.id, // authentication is added in Part 2
+            user: req.user?.id || "tempUserID", // authentication is added in Part 2 // TODO: REMOVE TEMPID
             title,
             content,
             reflection,
