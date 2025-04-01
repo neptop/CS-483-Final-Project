@@ -28,14 +28,14 @@ router.get("/:id", getEntryById);
 * @desc create a diary entry
 * @access Public
 */
-router.get("/:id", createEntry);
+router.post("/", createEntry);
 
 /**
 * @route PUT /api/diary/:id
 * @desc update diary entry
 * @access Public
 */
-router.get("/:id", updatedEntry)
+router.put("/:id", updatedEntry)
 
 /**
 * @route DELETE /api/diary/:id
