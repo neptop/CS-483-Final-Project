@@ -1,6 +1,7 @@
 import { error } from "console";
 import DiaryEntry from "../models/DiaryEntry.js";
 import { fetchWeather } from "./weatherController.js";
+import mongoose from "mongoose";
 
 /**
 * @route GET /api/diary
@@ -75,7 +76,7 @@ export const createEntry = async (req, res) => {
         // Fetch weather data if location is provided
         const weatherData = location ? await fetchWeather(location) : null;
         const newEntry = new DiaryEntry({
-            user: req.user?.id || "tempUserID", // authentication is added in Part 2 // TODO: REMOVE TEMPID
+            user: req.user?.id || new mongoose.Types.ObjectId(), // authentication is added in Part 2 // TODO: remove temp mongoose objectID
             title,
             content,
             reflection,
