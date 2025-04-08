@@ -24,7 +24,7 @@ router.get("/", getAllEntries);
 router.get("/:id", getEntryById);
 
 /**
-* @route POST /api/diary/
+* @route POST /api/diary
 * @desc create a diary entry
 * @access Public
 */
