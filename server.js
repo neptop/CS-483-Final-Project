@@ -9,6 +9,7 @@ import dotenv from "dotenv"; // Loads environment variables from .env file
 import cors from "cors"; // Enables Cross-Origin Resource Sharing
 import connectDB from "./config/db.js"; // Database connection function
 import diaryRoutes from "./routes/diaryRoutes.js"; // API routes for app
+import authRoutes from "./routes/authRoutes.js";
 import session from "express-session"; // Middleware to manage sessions
 import passport from "passport"; // Authentication framework
 import cookieParser from "cookie-parser"; // Parses cookies from incoming HTTP requests
@@ -28,30 +29,9 @@ connectDB();
 * Processes incoming requests before reaching route handlers.
 * Executed in the order it is declared
 */
-app.use(express.json()); // Parses JSON request bodies
-app.use(cors()); // Allows cross-origin requests (for frontend interaction)
-
-// Define API routes
-// All requests to /api/diary are forwarded to diaryRoutes.js
-app.use("/api/diary", diaryRoutes); // Mount routes under /api/diary
-
-// Default route to check if the server is running
-app.get("/", (req, res) => {
-res.send("Welcome to ThoughtStream API");
-});
-
-// Define the server port (uses environment variable or defaults to 5000)
-const PORT = process.env.PORT || 5000;
-
-// Start the Express server and listen for incoming requests
-app.listen(PORT, () => {
-console.log(`Server running on port ${PORT}`);
-});
-
 // Parses cookies attached to incoming requests.
 // Required by express-session to read the session ID from the cookie.
 app.use(cookieParser());
-
 /**
 * Configures session management using express-session. This middleware
 * stores session data on the server and issues a session ID cookie
@@ -69,15 +49,34 @@ app.use(cookieParser());
 * Store the 64-char hex string in your .env file as SESSION_SECRET.
 */
 app.use(session({
-secret: process.env.SESSION_SECRET,
-resave: false,
-saveUninitialized: false
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
 }));
-
 // Initializes Passport middleware. This must come after session middleware
 // so Passport can access session data.
 app.use(passport.initialize());
-
 // Enables persistent login sessions with Passport.It integrates with
 // express-session and makes req.user available for authenticated users.
 app.use(passport.session());
+app.use(express.json()); // Parses JSON request bodies
+app.use(cors()); // Allows cross-origin requests (for frontend interaction)
+
+
+// Define API routes
+// All requests to /api/diary are forwarded to diaryRoutes.js
+app.use("/auth", authRoutes);
+app.use("/api/diary", diaryRoutes); // Mount routes under /api/diary
+
+// Default route to check if the server is running
+app.get("/", (req, res) => {
+    res.send("Welcome to ThoughtStream API");
+});
+
+// Define the server port (uses environment variable or defaults to 5000)
+const PORT = process.env.PORT || 5000;
+
+// Start the Express server and listen for incoming requests
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
