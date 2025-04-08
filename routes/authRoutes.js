@@ -55,6 +55,15 @@ router.get("/google/callback",
 // TODO: Implement the route — router.get(“/logout”, ...)
 // Send a message indicating successful logout
 // Gracefully handle errors in case of logout failure
+
+router.get("/logout", (req, res, next) => {
+    req.logout((err) =>{
+        if(err)
+            return next(err);
+        res.send("logout successful")
+    });
+});
+
 /**
 * @route GET /auth/failure
 * @desc A simple error handler route for failed logins
