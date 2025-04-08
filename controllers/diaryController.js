@@ -28,6 +28,7 @@ export const getAllEntries = async (req, res) => {
             filter.location = location;
         }
         // Fetch filtered results and sort by newest first
+        filter.user = req.user._id;
         const entries = await DiaryEntry.find(filter).sort({ createdAt: -1 });
         res.status(200).json(entries);
     } catch (error) {
@@ -46,6 +47,9 @@ export const getEntryById = async (req, res) => {
         const entry = await DiaryEntry.findById(req.params.id);
         if (!entry) {
             return res.status(404).json({ message:"Diary entry not found"});
+        }
+        if (entry.user.toString() !== req.user._id.toString()) {
+            return res.status(403).json({message: "Forbidden"});
         }
         res.status(200).json(entry);
     } catch (error) {
@@ -116,7 +120,9 @@ export const updatedEntry = async (req, res) => {
         if (!updatedEntry) {
             return res.status(404).json({ message: "Diary entry not found." });
         }
-
+        if (entry.user.toString() !== req.user._id.toString()) {
+            return res.status(403).json({message: "Forbidden"});
+        }
         res.status(200).json(updatedEntry);
     } catch (error) {
         res.status(400).json({ message: error.message});
@@ -138,6 +144,9 @@ export const deleteEntry = async (req, res) => {
         const entry = await DiaryEntry.findByIdAndDelete(req.params.id);
         if(!entry){
             return res.status(404).json({message: error.message});
+        }
+        if (entry.user.toString() !== req.user._id.toString()) {
+            return res.status(403).json({message: "Forbidden"});
         }
         res.status(200).json({message: "Entry deleted successfully"});
     } catch (error){
