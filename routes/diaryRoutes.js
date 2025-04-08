@@ -6,8 +6,15 @@ import {
     updatedEntry,
     deleteEntry,
 } from "../controllers/diaryController.js";
+import { ensureAuthenticated } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
+
+router.get("/", ensureAuthenticated, getAllEntries);
+router.post("/", ensureAuthenticated, createEntry);
+router.get("/:id", ensureAuthenticated, getEntryById);
+router.put("/:id", ensureAuthenticated, updatedEntry);
+router.delete("/:id", ensureAuthenticated, deleteEntry);
 
 /**
 * @route GET /api/diary
