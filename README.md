@@ -62,8 +62,6 @@ OPENWEATHER_API_KEY=your_openweather_api_key
 
 ---
 
-
-
 ## Extra Credit
 
 No extra credit was done
