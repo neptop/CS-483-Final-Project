@@ -29,7 +29,7 @@ export const getAllEntries = async (req, res) => {
         }
         // Fetch filtered results and sort by newest first
         filter.user = req.user._id;
-        const entries = await DiaryEntry.find(filter).sort({ createdAt: -1 });
+        const entries = await DiaryEntry.find({ user: req.user.userId });
         res.status(200).json(entries);
     } catch (error) {
         res.status(500).json({ message: "Server Error: Unable to fetch diary entries" });
@@ -48,7 +48,7 @@ export const getEntryById = async (req, res) => {
         if (!entry) {
             return res.status(404).json({ message:"Diary entry not found"});
         }
-        if (entry.user.toString() !== req.user._id.toString()) {
+        if (entry.user.toString() !== req.user.userId) {
             return res.status(403).json({message: "Forbidden"});
         }
         res.status(200).json(entry);
@@ -120,7 +120,7 @@ export const updatedEntry = async (req, res) => {
         if (!updatedEntry) {
             return res.status(404).json({ message: "Diary entry not found." });
         }
-        if (entry.user.toString() !== req.user._id.toString()) {
+        if (entry.user.toString() !== req.user.userId) {
             return res.status(403).json({message: "Forbidden"});
         }
         res.status(200).json(updatedEntry);
@@ -145,7 +145,7 @@ export const deleteEntry = async (req, res) => {
         if(!entry){
             return res.status(404).json({message: error.message});
         }
-        if (entry.user.toString() !== req.user._id.toString()) {
+        if (entry.user.toString() !== req.user.userId) {
             return res.status(403).json({message: "Forbidden"});
         }
         res.status(200).json({message: "Entry deleted successfully"});
