@@ -21,7 +21,10 @@ const app = express();
 connectDB();
 
 app.use(express.json()); // Parses JSON request bodies
-app.use(cors()); // Allows cross-origin requests (for frontend interaction)
+app.use(cors({
+    origin: "https://localhost:5173",
+    credentials: true
+})); // Allows cross-origin requests (for frontend interaction)
 
 
 // Define API routes
