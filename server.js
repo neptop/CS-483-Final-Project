@@ -26,7 +26,7 @@ app.use(cors()); // Allows cross-origin requests (for frontend interaction)
 
 // Define API routes
 // All requests to /api/diary are forwarded to diaryRoutes.js
-app.use("/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/diary", diaryRoutes); // Mount routes under /api/diary
 
 // Default route to check if the server is running
