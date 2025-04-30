@@ -10,6 +10,8 @@ import cors from "cors"; // Enables Cross-Origin Resource Sharing
 import connectDB from "./config/db.js"; // Database connection function
 import diaryRoutes from "./routes/diaryRoutes.js"; // API routes for app
 import authRoutes from "./routes/authRoutes.js";
+import weatherRoutes from "./routes/weatherRoutes.js";
+
 
 // Load environment variables from .env into process.env
 dotenv.config();
@@ -31,6 +33,7 @@ app.use(cors({
 // All requests to /api/diary are forwarded to diaryRoutes.js
 app.use("/api/auth", authRoutes);
 app.use("/api/diary", diaryRoutes); // Mount routes under /api/diary
+app.use("/api/weather", weatherRoutes);
 
 // Default route to check if the server is running
 app.get("/", (req, res) => {
