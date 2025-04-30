@@ -22,4 +22,18 @@ export const fetchWeather = async (location) => {
         console.error("Weather API error: ", error.message);
         return null;
      }
-}
+};
+
+export const getWeather = async (req, res) => {
+    const location = req.query.location;
+    if (!location) {
+        return res.status(400).json({ message: "Location required" });
+    }
+
+    const weatherData = await fetchWeather(location);
+    if(!weatherData){
+        return res.status(500).json({ message: "Weather data fetch failed"})
+    }
+
+    res.json(weatherData);
+};
