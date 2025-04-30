@@ -5,8 +5,8 @@ import {
     getEntryById,
     updatedEntry,
     deleteEntry,
-} from "../controllers/diaryController.js";
-import authenticateJWT from "../middleware/authMiddleware.js";
+} from "../../controllers/diaryController.js";
+import authenticateJWT from "../../middleware/authMiddleware.js";
 
 const router = express.Router();
 
