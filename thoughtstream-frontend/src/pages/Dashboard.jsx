@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import Header from "../components/Header";
-import WeatherWidget from ".../components/WeatherWidget"
-import NewEntryForm from "../components/NewEntryForm"
-import DiaryList from "../components/DiaryList"
+import WeatherWidget from ".../components/WeatherWidget";
+import NewEntryForm from "../components/NewEntryForm";
+import DiaryList from "../components/DiaryList";
 
 function Dashboard() {
     const { user } = useContext(AuthContext);
