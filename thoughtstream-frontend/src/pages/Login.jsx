@@ -15,12 +15,14 @@ import api from "../services/api";
 // This is how we access the global authentication state
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 // Define the Login component that displays the login page and handles login logic
 function Login() {
     // Access the login function from AuthContext using useContext
     // The login() function stores the JWT and user info after successful authentication
     const { login } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     /**
     * This function is triggered after the user successfully logs in via Google.
@@ -46,6 +48,7 @@ function Login() {
             * - Keeps the user authenticated until they explicitly log out
             */
             login(response.data.token, response.data.user);
+            navigate("/dashboard");
         } catch (error) {
             // Log any errors that occur during the login or backend exchange process
             console.error("Login failed:", error);
