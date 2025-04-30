@@ -1,5 +1,5 @@
 import express from "express";
-import { handleGoogleLogin } from "../controllers/authController.js";
+import { handleGoogleLogin } from "../../controllers/authController.js";
 
 
 // Create a new Express router instance
