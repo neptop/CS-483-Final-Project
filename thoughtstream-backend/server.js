@@ -7,7 +7,7 @@
 import express from "express"; // Web framework for Node.js
 import dotenv from "dotenv"; // Loads environment variables from .env file
 import cors from "cors"; // Enables Cross-Origin Resource Sharing
-import connectDB from "../config/db.js"; // Database connection function
+import connectDB from "./config/db.js"; // Database connection function
 import diaryRoutes from "./routes/diaryRoutes.js"; // API routes for app
 import authRoutes from "./routes/authRoutes.js";
 import weatherRoutes from "./routes/weatherRoutes.js";
@@ -24,7 +24,7 @@ connectDB();
 
 app.use(express.json()); // Parses JSON request bodies
 app.use(cors({
-    origin: "https://localhost:5173",
+    origin: "http://localhost:5173",
     credentials: true
 })); // Allows cross-origin requests (for frontend interaction)
 
