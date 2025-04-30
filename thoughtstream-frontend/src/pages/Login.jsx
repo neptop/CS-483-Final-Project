@@ -37,7 +37,7 @@ function Login() {
             // Extract the Google-issued ID token (JWT) from the login response
             const idToken = credentialResponse.credential;
             // Send the ID token to the backend to verify and exchange for an app-issued JWT
-            const response = await api.post("/api/auth/google", { idToken });
+            const response = await api.post("/api/auth/google", { credential: idToken });
             /**
             * This login() call supports stateless authentication using JWT:
             * - Stores the JWT in localStorage to persist login across page reloads
