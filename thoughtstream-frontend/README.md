@@ -64,7 +64,11 @@ Routing Structure:
 How to Run Thoughtstream Diary App:
 
 Change directory into the backend and frontend in separate terminals
--```cd ../thoughtstream-backend```
--```cd ../thoughtstream-frontend```
+```bash
+cd ../thoughtstream-backend
+```
+```bash
+cd ../thoughtstream-frontend
+```
 
 Install the correct dependencies for the backend and frontend
