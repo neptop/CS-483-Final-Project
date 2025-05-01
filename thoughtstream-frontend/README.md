@@ -72,3 +72,10 @@ cd ../thoughtstream-frontend
 ```
 
 Install the correct dependencies for the backend and frontend
+```bash
+npm install
+```
+Then start the backend and frontend afterwards
+```bash
+npm run dev
+```
