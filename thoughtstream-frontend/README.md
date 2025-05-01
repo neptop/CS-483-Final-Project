@@ -139,3 +139,8 @@ Once you are done, you can use the logout button in the top right corner which w
     width="400"
   />
 </p>
+
+Extra Credit:
+- Added Edit button to Dashboard
+- Added Delete button to Dashboard
+- If location is provided then it will also update location in weather entry
