@@ -1,12 +1,62 @@
-# React + Vite
+Component Structure Overview:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+/thoughtstream-frontend
+- index.html
+- package-lock.json
+- package.json
+- vite.config.js
+- eslint.config.js
+- .env
+- /node_modules
+- /public
+- /src
+    - main.jsx
+    - App.jsx
+    - App.css
+    - /assets
+    - /components
+        - DiaryEntryCard.jsx
+        - DiaryList.jsx
+        - Header.jsx
+        - LoginButton.jsx
+        - NewEntryForm.jsx
+        - PrivateRoute.jsx
+        - WeatherWidget.jsx
+    - /context
+        - AuthContext.jsx
+    - /pages
+        - Dashboard.jsx
+        - Login.jsx
+    - /services
+        - api.js
+    - /styles
+        - index.css
+    - /utils
+        - auth.js
+/thoughtstream-backend
+- server.js
+- package.json
+- package-lock.json
+- .env
+- .env.example
+- /node_modules
+- /config
+    - db.js
+- /controllers
+    - authController.js
+    - diaryController.js
+    - weatherController.js
+- /middleware
+    - authMiddleware.js
+- /models
+    - DiaryEntry.js
+    - User.js
+- /routes
+    - authRoutes.js
+    - diaryRoutes.js
+    - weaterRoutes.js
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Routing Structure:
+/login - The public page that displays the google login button
+/dashboard - Protected page that is only visible to the dashboard if authenticated
+* - Redirects unknown routes to the dashboard only if the user is authenticated
