@@ -84,14 +84,14 @@ Head to
 http://localhost:5173/
 ```
 There, you will be prompted to Sign in with Google:
-<p align="center">
+<p align="left">
   <img
     src="https://github.com/user-attachments/assets/3af18db0-8369-4022-85b4-eb06b7cdd798"
     alt="Dashboard screenshot"
     width="400"
   />
 </p>
-<p align="center">
+<p align="left">
   <img
     src="https://github.com/user-attachments/assets/84aae129-ce1b-43e8-b620-a88c6c5137ea"
     alt="Login page screenshot"
