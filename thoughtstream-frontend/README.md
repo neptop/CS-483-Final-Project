@@ -101,7 +101,7 @@ There, you will be prompted to Sign in with Google:
 After logging in, you will be redirected to the dashboard
 <p align="left">
   <img
-    src="[https://github.com/user-attachments/assets/84aae129-ce1b-43e8-b620-a88c6c5137ea](https://github.com/user-attachments/assets/06097ab6-1a10-4a3c-947b-2683d5e6d476"
+    src="https://github.com/user-attachments/assets/06097ab6-1a10-4a3c-947b-2683d5e6d476"
     alt="Login page screenshot"
     width="400"
   />
