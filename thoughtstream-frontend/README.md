@@ -107,9 +107,18 @@ After logging in, you will be redirected to the dashboard where you can write a 
   />
 </p>
 After saving an entry, it will show up in the diary entry list below.
+The weather widget at the top of the page will display the weather of the location of the latest entry.
 <p align="left">
   <img
     src="https://github.com/user-attachments/assets/c91a6d8b-5400-4e48-a2e2-93b7b562d35e"
+    alt="Login page screenshot"
+    width="400"
+  />
+</p>
+An entry without a location will not display a place or any weather statistics.
+<p align="left">
+  <img
+    src="https://github.com/user-attachments/assets/df5a123b-54fc-4d3b-a496-e9504461971f"
     alt="Login page screenshot"
     width="400"
   />
