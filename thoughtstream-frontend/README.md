@@ -98,7 +98,7 @@ There, you will be prompted to Sign in with Google:
     width="400"
   />
 </p>
-After logging in, you will be redirected to the dashboard
+After logging in, you will be redirected to the dashboard where you can write a diary entry.
 <p align="left">
   <img
     src="https://github.com/user-attachments/assets/06097ab6-1a10-4a3c-947b-2683d5e6d476"
@@ -106,3 +106,12 @@ After logging in, you will be redirected to the dashboard
     width="400"
   />
 </p>
+After saving an entry, it will show up in the diary entry list below.
+<p align="left">
+  <img
+    src="https://github.com/user-attachments/assets/c91a6d8b-5400-4e48-a2e2-93b7b562d35e"
+    alt="Login page screenshot"
+    width="400"
+  />
+</p>
+
