@@ -123,4 +123,12 @@ An entry without a location will not display a place or any weather statistics.
     width="400"
   />
 </p>
+You are also able to delete and edit entries. Below, is an example of me editing entry 3 after deleting entry 2 (which can be seen by the Recent Entries list missing entry 2)
+<p align="left">
+  <img
+    src="https://github.com/user-attachments/assets/5c685221-beba-4539-8b9f-af3f4de01742"
+    alt="Login page screenshot"
+    width="400"
+  />
+</p>
 
