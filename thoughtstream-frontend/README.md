@@ -83,5 +83,8 @@ Head to
 ```
 http://localhost:5173/
 ```
-There, you will be prompted to Sign in with Google
-<img width="412" alt="Screenshot 2025-04-30 at 9 18 45 PM" src="https://github.com/user-attachments/assets/094241bd-0683-4043-85e1-4b3b825d3fc0" />
+There, you will be prompted to Sign in with Google:
+
+![image](https://github.com/user-attachments/assets/3af18db0-8369-4022-85b4-eb06b7cdd798)
+![image](https://github.com/user-attachments/assets/84aae129-ce1b-43e8-b620-a88c6c5137ea)
+
