@@ -56,7 +56,7 @@ export default function Dashboard() {
             {loading ? (
                 <p>Loading entries...</p>
             ) : (
-                <DiaryList entries={entries} />
+                <DiaryList entries={entries} setEntries={setEntries} />
             )}
         </div>
     );
