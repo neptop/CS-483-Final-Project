@@ -9,21 +9,15 @@ export default function NewEntryForm({ onSuccess }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     try {
-      const res = await api.post('/diary', { title, content, location });
-      const entry = res.data;
-      // clear fields
-      setTitle('');
-      setContent('');
-      setLocation('');
-      if (onSuccess) onSuccess(entry);
+      const payload = { title, content, location }; 
+      console.log('Submitting payload', payload);  // <— add this
+      const res = await api.post('/diary', payload);
+      onSuccess(res.data);
     } catch (err) {
-      console.error('Error creating entry:', err);
-    } finally {
-      setLoading(false);
+      console.error('Error creating entry:', err.response?.data || err);
     }
-  };
+  };  
 
   return (
     <form onSubmit={handleSubmit} style={{ marginBottom: '1rem' }}>
