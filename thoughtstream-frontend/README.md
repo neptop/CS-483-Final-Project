@@ -131,4 +131,11 @@ You are also able to delete and edit entries. Below, is an example of me editing
     width="400"
   />
 </p>
-
+Once you are done, you can use the logout button in the top right corner which will redirect you to the login page.
+<p align="left">
+  <img
+    src="https://github.com/user-attachments/assets/71ee8126-61f9-42a5-b22e-2dad79e1099b"
+    alt="Login page screenshot"
+    width="400"
+  />
+</p>
