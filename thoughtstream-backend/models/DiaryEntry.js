@@ -14,7 +14,8 @@ const diarySchema = new mongoose.Schema(
         // User specified location (city, country)
         location: {
             type: String,
-            required: true
+            required: false,
+            default: ''
         },
         tags: { type: [String], default: [] },
         weather: {
