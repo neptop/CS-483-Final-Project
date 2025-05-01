@@ -35,7 +35,9 @@ export default function Dashboard() {
         <div style={{ padding: '1rem' }}>
             <Header />
             <h2>Welcome, {user?.name}!</h2>
-            <WeatherWidget location="Portland, US" />
+            {entries.length > 0 && (
+              <WeatherWidget location={entries[0].location} />
+            )}
 
             <NewEntryForm onSuccess={handleNewEntry} />
 
