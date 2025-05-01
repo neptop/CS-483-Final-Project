@@ -2,7 +2,6 @@ import { GoogleLogin } from "@react-oauth/google";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import api from "../services/api";
-import { log } from "console";
 import { useNavigate } from "react-router-dom";
 
 function LoginButton() {
@@ -26,7 +25,7 @@ function LoginButton() {
 
     return (
         <GoogleLogin
-            onSuccess={handleLoginSucess}
+            onSuccess={handleLoginSuccess}
             onError={() => console.error("google login error")}
         />
     );
