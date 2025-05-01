@@ -61,11 +61,10 @@ Routing Structure:
 /dashboard - Protected page that is only visible to the dashboard if authenticated
 * - Redirects unknown routes to the dashboard only if the user is authenticated
 
-
 How to Run Thoughtstream Diary App:
 
 Change directory into the backend and frontend in separate terminals
-<code>cd ../thoughtstream-backend</code>
-<code>cd ../thoughtstream-frontend</code>
+<code>```cd ../thoughtstream-backend```</code>
+<code>```cd ../thoughtstream-frontend```</code>
 
 Install the correct dependencies for the backend and frontend
