@@ -75,7 +75,13 @@ Install the correct dependencies for the backend and frontend
 ```bash
 npm install
 ```
-Then start the backend and frontend afterwards
+Then start the backend and frontend like so,
 ```bash
 npm run dev
 ```
+Head to
+```
+http://localhost:5173/
+```
+There, you will be prompted to Sign in with Google
+<img width="412" alt="Screenshot 2025-04-30 at 9 18 45 PM" src="https://github.com/user-attachments/assets/094241bd-0683-4043-85e1-4b3b825d3fc0" />
